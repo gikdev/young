@@ -6,6 +6,10 @@ namespace Backend.Domain.YsqFormAggregate;
 public class YsqForm : AggregateRoot {
     private readonly List<YsqFormAnswer> _answers = [];
 
+#pragma warning disable CS8618 // For EF Core
+    private YsqForm() {}
+#pragma warning restore CS8618
+
     private YsqForm(
         string              fullName,
         string              phone,
