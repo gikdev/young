@@ -1,0 +1,71 @@
+// Complete these, and then delete the comment
+// --ENDPOINT--
+// xFooXyz
+
+using FluentValidation;
+using MediatR;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Logging;
+
+namespace _____;
+
+internal class --ENDPOINT--Endpoint : EndpointBase {
+    public override ApiRoute Route => ApiEndpoints._____;
+
+    public override void MapEndpoint(IEndpointRouteBuilder app) {
+        app
+            .MapMethods(Route.Path, Route.Methods, Handle)
+            .WithName(Route.Name)
+            .WithSummary(Route.Summary)
+            .WithDescription(Route.Description)
+            .WithTags(Route.Tag)
+            .Accepts<--ENDPOINT--Request>("application/json")
+            // .Produces<FooItselfResponse>();
+            // .Produces<FooListResponse>();
+            // .Produces(StatusCodes.Status204NoContent);
+    }
+
+    private static async Task<IResult> Handle(
+        [FromServices] ILogger<--ENDPOINT--Endpoint>   logger,
+        [FromServices] ISender                     mediator,
+        // [FromServices] IValidator<--ENDPOINT--Request> validator,
+        // [FromRoute]    Guid fooId,
+        // [FromBody]     --ENDPOINT--Request             request,
+        // [FromQuery]    _____           _____,
+    ) {
+        // var validationResult = await validator.ValidateAsync(request);
+        // if (!validationResult.IsValid) return Results.BadRequest(validationResult.Errors);
+
+        // logger.LogDebug("Request received.");
+        // logger.LogDebug("Request received with {#FooId}.", fooId);
+        // logger.LogDebug("Request received with {@Request}.", request);
+
+        // var result = await mediator.Send(Mappings.Create--ENDPOINT--Command());
+        // var result = await mediator.Send(Mappings.Create--ENDPOINT--Command(fooId));
+        // var result = await mediator.Send(request.MapToCommand());
+        // var result = await mediator.Send(request.MapToCommand(fooId));
+        // var result = await mediator.Send(Mappings.Create--ENDPOINT--Query());
+        // var result = await mediator.Send(Mappings.Create--ENDPOINT--Query(fooId));
+        // var result = await mediator.Send(request.MapToQuery());
+        // var result = await mediator.Send(request.MapToQuery(fooId));
+
+        if (result.IsError) {
+            var errors = result.Errors;
+            logger.LogInformation("Request failed with {ErrorCount} errors.", errors.Count);
+            return Problem(errors);
+        }
+
+        // var foo = result.Value;
+
+        // logger.LogInformation("Request succeeded.");
+        // logger.LogInformation("Request succeeded #{FooId}", fooId);
+        // logger.LogInformation("Request succeeded #{FooId}", foo.Id);
+
+        // return Results.Ok(foo.MapToItselfResponse());
+        // return Results.Ok(foo.MapToListResponse());
+        // return Results.NoContent();
+    }
+}

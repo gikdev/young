@@ -1,0 +1,10 @@
+using FluentValidation;
+
+namespace _____;
+
+public class --NAME--Validator : AbstractValidator<--Name--> {
+    // public --NAME--Validator() {
+    //     // RuleFor(x => x._____)
+    //         // .IsRequired()
+    // }
+}

@@ -1,0 +1,49 @@
+// Complete these, and then delete the comment
+// xFooXyz
+
+using ErrorOr;
+
+namespace _____;
+
+public class Foo : AggregateRoot {
+    // private readonly List<Guid> _stupidPeopleIds = [];
+
+    private Foo(
+        // ...
+        Guid? id = null
+    ) : base(id) {
+        // ...
+    }
+
+    // public string Something { get; private set; }
+    // public IReadOnlyList<Guid> StupidPeopleIds => _stupidPeopleIds.AsReadOnly();
+
+    public static ErrorOr<Foo> Create(
+        // ...
+        Guid? id = null
+    ) {
+        var foo = new Foo(
+            // ...
+        );
+
+        return foo;
+    }
+
+    private void SetPrivateStuff(
+        // ...
+    ) {
+        // ...
+    }
+
+    public ErrorOr<Foo> Duplicate() {
+        // ...
+    }
+
+    public ErrorOr<Success> Update(
+        // Option<____> _____,
+    ) {
+        // _____.MatchSome(v => _____ = v);
+
+        return Result.Success;
+    }
+}

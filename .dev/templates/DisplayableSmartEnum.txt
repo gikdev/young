@@ -1,0 +1,29 @@
+using Ardalis.SmartEnum;
+
+namespace _____;
+
+public class Xyz : SmartEnum<Xyz, string> {
+    // public static readonly Xyz Thing01   = new(nameof(Thing01), "Thing01", "", "Thing01");
+    // public static readonly Xyz Thing02   = new(nameof(Thing02), "Thing02", "", "Thing02");
+    // public static readonly Xyz Thing03   = new(nameof(Thing03), "Thing03", "", "Thing03");
+    // public static readonly Xyz Thing04   = new(nameof(Thing04), "Thing04", "", "Thing04");
+    // public static readonly Xyz Thing05   = new(nameof(Thing05), "Thing05", "", "Thing05");
+    // public static readonly Xyz Thing06   = new(nameof(Thing06), "Thing06", "", "Thing06");
+    // public static readonly Xyz Thing07   = new(nameof(Thing07), "Thing07", "", "Thing07");
+    // public static readonly Xyz Thing08   = new(nameof(Thing08), "Thing08", "", "Thing08");
+    // public static readonly Xyz Thing09   = new(nameof(Thing09), "Thing09", "", "Thing09");
+    // public static readonly Xyz Thing10   = new(nameof(Thing10), "Thing10", "", "Thing10");
+
+    public string DisplayNameEn { get; private set; }
+    public string DisplayNameFa { get; private set; }
+
+    private Xyz(
+        string name,
+        string displayNameEn,
+        string displayNameFa,
+        string value
+    ) : base(name, value) {
+        DisplayNameEn = displayNameEn;
+        DisplayNameFa = displayNameFa;
+    }
+}

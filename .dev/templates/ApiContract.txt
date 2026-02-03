@@ -1,0 +1,6 @@
+namespace _____;
+
+public record __NAME__ {
+    // TODO: Implement members
+    // public required string Something { get; init; }
+}

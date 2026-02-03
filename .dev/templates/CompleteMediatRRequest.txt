@@ -1,0 +1,69 @@
+// Complete these, and then delete the comment
+// --RESULT--
+// --REQUEST--
+// IFooRepo
+
+using ErrorOr;
+using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.Logging;
+using Optional;
+
+namespace _____;
+
+public record --REQUEST-- : IRequest<--RESULT--> {
+    // TODO: Implement members
+    // public required string Something { get; init; }
+}
+
+public record --REQUEST--(
+    Guid Id
+) : IRequest<--RESULT-->;
+
+public class --REQUEST--Validator : AbstractValidator<--REQUEST-->;
+// public class --REQUEST--Validator : AbstractValidator<--REQUEST--> {
+//     // public --REQUEST--Validator() {
+//     //     // RuleFor(x => x._____)
+//     //         // .IsRequired()
+//     // }
+// }
+
+public class --REQUEST--Handler(
+    ILogger<--REQUEST--Handler> logger,
+    IFooRepo fooRepo
+) : IRequestHandler<--REQUEST--, --RESULT--> {
+    public async Task<--RESULT--> Handle(
+        --REQUEST-- request,
+        CancellationToken cancellationToken
+    ) {
+        // var foos = await fooRepo.ListAsync();
+        // return foos;
+
+        // var foo = await fooRepo.GetOneByIdAsync(request.Id);
+        // if (foo is null) return Error.NotFound("Foo not found.");
+
+        // var result = foo.Update(
+        //     taskCommentFormTypeId: Option.Some(request.TaskCommentFormTypeId),
+        //     description: Option.Some(request.Description),
+        // );
+
+        // var result = foo.Duplicate();
+
+        // var result = Foo.Create(
+        //     lessonLearnedWorkflowTemplateId: request.LessonLearnedWorkflowTemplateId,
+        //     jsonItems: request.JsonItems,
+        // );
+
+        // if (result.IsError) return result.Errors;
+        // var foo = result.Value;
+
+        // await fooRepo.AddAsync(foo);
+        // await fooRepo.RemoveAsync(foo);
+        // await fooRepo.UpdateAsync(foo);
+        // await fooRepo.SaveChangesAsync();
+
+        logger.LogInformation("Request got successfully executed.");
+
+        return Result.Success;
+    }
+}

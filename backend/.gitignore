@@ -1,0 +1,28 @@
+# Build Results
+bin/
+obj/
+out/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# IDEs
+.vs/
+.rider/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Secrets (NEVER commit these)
+*.pfx
+*.cert
+
+# NuGet
+*.nupkg
+*.snupkg

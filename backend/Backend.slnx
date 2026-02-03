@@ -1,3 +1,11 @@
 <Solution>
-  <Project Path="Api.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/Backend.Api.Contracts/Backend.Api.Contracts.csproj" />
+    <Project Path="src/Backend.Api/Backend.Api.csproj" />
+    <Project Path="src/Backend.App/Backend.App.csproj" />
+    <Project Path="src/Backend.Domain/Backend.Domain.csproj" />
+    <Project Path="src/Backend.Host/Backend.Host.csproj" />
+    <Project Path="src/Backend.Infra/Backend.Infra.csproj" />
+    <Project Path="src/Backend.Shared/Backend.Shared.csproj" />
+  </Folder>
 </Solution>
