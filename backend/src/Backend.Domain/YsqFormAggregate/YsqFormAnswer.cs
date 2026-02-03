@@ -4,6 +4,10 @@ using ErrorOr;
 namespace Backend.Domain.YsqFormAggregate;
 
 public class YsqFormAnswer : ValueObject {
+#pragma warning disable CS8618 // For EF Core
+    private YsqFormAnswer() {}
+#pragma warning restore CS8618
+
     private YsqFormAnswer(
         int         questionIndex,
         YsqResponse response
