@@ -1,0 +1,33 @@
+# CUSTOM
+.temp/
+
+# Dependencies
+node_modules/
+bin/
+obj/
+out/
+
+# Build outputs
+dist/
+build/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.user
+*.suo
+*.userosscache
+
+# IDE / Editor
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite
