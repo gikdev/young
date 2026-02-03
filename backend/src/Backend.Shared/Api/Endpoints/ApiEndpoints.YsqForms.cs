@@ -10,7 +10,7 @@ public static partial class ApiEndpoints {
             Name    = nameof(CreateYsqForm),
             Method  = ApiHttpMethod.Post,
             Path    = YsqFormsBase,
-            Summary = "Create YSQ form"
+            Summary = "Create new Young schema questionnaire form"
         };
 
         public static readonly ApiRoute ListYsqForms = new() {
@@ -18,7 +18,7 @@ public static partial class ApiEndpoints {
             Name    = nameof(ListYsqForms),
             Method  = ApiHttpMethod.Get,
             Path    = YsqFormsBase,
-            Summary = "List YSQ forms"
+            Summary = "List Young schema questionnaire forms"
         };
 
         public static readonly ApiRoute GetYsqFormById = new() {
@@ -26,7 +26,7 @@ public static partial class ApiEndpoints {
             Name    = nameof(GetYsqFormById),
             Method  = ApiHttpMethod.Get,
             Path    = $"{YsqFormsBase}/{{ysqFormId:guid}}",
-            Summary = "Get a YSQ form by ID"
+            Summary = "Get a Young schema questionnaire form by ID"
         };
     }
 }
