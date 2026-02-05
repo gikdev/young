@@ -1,3 +1,7 @@
+# Generated files
+generated/
+*.gen.ts
+
 # Logs
 logs
 *.log

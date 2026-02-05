@@ -22,6 +22,11 @@ tasks:
       - task: type-check
       - task: build:raw
 
+  generate:api-client:
+    aliases: [gac]
+    cmds:
+      - npm run openapi-ts
+
   format:
     aliases: [f]
     cmds:
