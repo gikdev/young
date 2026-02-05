@@ -1,9 +1,12 @@
+import { youngSchemaFormSlice } from "#/routes/forms/young-schema/-store"
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import type { PropsWithChildren } from "react"
 import { Provider, useDispatch, useSelector, useStore } from "react-redux"
 
 const rootReducer = combineReducers({
-  // sth: sthSlice.reducer,
+  forms: combineReducers({
+    youngSchemaForm: youngSchemaFormSlice.reducer,
+  }),
 })
 
 export const store = configureStore({

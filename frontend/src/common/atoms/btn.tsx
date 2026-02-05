@@ -6,11 +6,7 @@ export const btn = tv({
     flex items-center justify-center
     rounded-md border-none
     font-inherit cursor-pointer transition-all
-    duration-100 shadow-md items-center
-
-    text-slate-100
-    bg-blue-600
-    hover:bg-blue-700
+    duration-100 shadow-md
 
     active:scale-95
 
@@ -20,12 +16,25 @@ export const btn = tv({
     disabled:cursor-not-allowed
   `,
   variants: {
+    variant: {
+      primary: `
+        text-slate-100
+        bg-blue-600
+        hover:bg-blue-700
+      `,
+      secondary: `
+        text-slate-800
+        bg-slate-200
+        hover:bg-slate-300
+      `,
+    },
     isIcon: {
       false: "gap-2 px-4 py-3 min-h-12",
       true: "gap-1 p-2 h-12 w-12",
     },
   },
   defaultVariants: {
+    variant: "primary",
     isIcon: false,
   },
 })
