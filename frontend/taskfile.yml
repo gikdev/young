@@ -1,0 +1,49 @@
+# https://taskfile.dev
+version: "3"
+
+tasks:
+  default: task --list-all
+
+  dev:
+    aliases: [d]
+    cmds:
+      - npm run vite
+
+  type-check:
+    aliases: [t]
+    cmds:
+      - npm run tsc -- -b
+
+  build:raw: npm run vite -- build
+
+  build:
+    aliases: [b]
+    cmds:
+      - task: type-check
+      - task: build:raw
+
+  format:
+    aliases: [f]
+    cmds:
+      - npm run oxfmt
+
+  lint:
+    aliases: [l]
+    cmds:
+      - npm run oxlint
+
+  lint:fix:
+    aliases: [lf]
+    cmds:
+      - npm run oxlint -- --fix
+
+  lint:fix:dangerously:
+    aliases: [lfd]
+    cmds:
+      - npm run oxlint -- --fix --fix-suggestions --fix-dangerously
+
+  make-perfect:
+    aliases: [p]
+    cmds:
+      - task: format
+      - task: lint:fix:dangerously
