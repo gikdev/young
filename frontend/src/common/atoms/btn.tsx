@@ -27,6 +27,14 @@ export const btn = tv({
         bg-slate-200
         hover:bg-slate-300
       `,
+      disabled: `
+        text-slate-800
+        bg-slate-200
+        opacity-50
+        scale-100
+        duration-0
+        cursor-not-allowed
+      `,
     },
     isIcon: {
       false: "gap-2 px-4 py-3 min-h-12",

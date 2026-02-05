@@ -22,7 +22,9 @@ function RouteComponent() {
   const form = useAppForm({
     defaultValues: basicInfo,
     validators: {
+      onMount: BasicInfoSchema,
       onChange: BasicInfoSchema,
+      onSubmit: BasicInfoSchema,
     },
     onSubmit({ value }) {
       dispatch(youngSchemaFormSlice.actions.setBasicInfo(value))

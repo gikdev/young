@@ -29,11 +29,7 @@ export function NativeSelectField({ label, options }: Props) {
           </option>
         ))}
       </NativeSelect>
-      <FieldStatus
-        errors={field.state.meta.errors}
-        isDirty={field.state.meta.isDirty}
-        isValid={field.state.meta.isValid}
-      />
+      <FieldStatus errors={field.state.meta.errors} isValid={field.state.meta.isValid} />
     </FieldLabel>
   )
 }

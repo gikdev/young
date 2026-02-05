@@ -11,11 +11,7 @@ export function TextField({ label }: { label: string }) {
   return (
     <FieldLabel title={label}>
       <Input value={field.state.value} onChange={e => field.handleChange(e.target.value)} />
-      <FieldStatus
-        errors={field.state.meta.errors}
-        isDirty={field.state.meta.isDirty}
-        isValid={field.state.meta.isValid}
-      />
+      <FieldStatus errors={field.state.meta.errors} isValid={field.state.meta.isValid} />
     </FieldLabel>
   )
 }

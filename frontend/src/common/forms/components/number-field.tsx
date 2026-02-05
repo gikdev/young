@@ -19,11 +19,7 @@ export function NumberField({ label }: { label: string }) {
   return (
     <FieldLabel title={label}>
       <Input type="number" value={field.state.value} onChange={onChange} />
-      <FieldStatus
-        errors={field.state.meta.errors}
-        isDirty={field.state.meta.isDirty}
-        isValid={field.state.meta.isValid}
-      />
+      <FieldStatus errors={field.state.meta.errors} isValid={field.state.meta.isValid} />
     </FieldLabel>
   )
 }
