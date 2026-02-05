@@ -4,7 +4,7 @@ version: '3'
 dotenv: ['../.env']
 
 vars:
-  STARTUP_PATH: "./src/Backend.Host"
+  STARTUP_PATH: "./src/Backend.Web"
   PROJECT_PATH: "./src/Backend.Infra"
   MIGRATIONS_DIR: "Migrations"
   DB_CTX_NAME: "BackendDbCtx"
@@ -21,7 +21,7 @@ tasks:
     aliases: [r]
     desc: Run the project
     cmds:
-      - dotnet run --project ./src/Backend.Host/ --no-restore
+      - dotnet run --project {{.STARTUP_PATH}} --no-restore
     requires:
       vars: [ ASPNETCORE_ENVIRONMENT, ASPNETCORE_URLS, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME ]
 
