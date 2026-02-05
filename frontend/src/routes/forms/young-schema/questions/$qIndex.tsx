@@ -11,7 +11,7 @@ import {
   XCircleIcon,
   XIcon,
 } from "@phosphor-icons/react"
-import { createFileRoute, Link, linkOptions, Navigate } from "@tanstack/react-router"
+import { createFileRoute, Link, linkOptions, Navigate, useNavigate } from "@tanstack/react-router"
 
 import { YsqAnswerCard } from "./-ysq-answer-card"
 import { YsqQuestionsRepo } from "./-ysq-questions-repo"
@@ -29,6 +29,7 @@ export const Route = createFileRoute("/forms/young-schema/questions/$qIndex")({
 })
 
 function RouteComponent() {
+  const navigate = useNavigate()
   const { qIndex } = Route.useParams()
 
   const question = YsqQuestionsRepo.getQuestionByIndex(qIndex)
@@ -58,6 +59,14 @@ function RouteComponent() {
         params: { qIndex: questionIdx + 1 },
       })
 
+  const handleOnAnswerClick = () => {
+    if (question == null) return
+
+    setTimeout(() => {
+      navigate(nextLink)
+    }, 200)
+  }
+
   if (question == null) return <Navigate to="/forms/young-schema/basic-info" />
 
   return (
@@ -68,6 +77,7 @@ function RouteComponent() {
 
       <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(160px,1fr))] sm:grid-cols-3">
         <YsqAnswerCard
+          additionalOnClick={handleOnAnswerClick}
           Icon={WarningIcon}
           value={1}
           qIndex={qIndex}
@@ -76,6 +86,7 @@ function RouteComponent() {
         />
 
         <YsqAnswerCard
+          additionalOnClick={handleOnAnswerClick}
           Icon={XCircleIcon}
           value={2}
           qIndex={qIndex}
@@ -84,6 +95,7 @@ function RouteComponent() {
         />
 
         <YsqAnswerCard
+          additionalOnClick={handleOnAnswerClick}
           Icon={XIcon}
           value={3}
           qIndex={qIndex}
@@ -92,6 +104,7 @@ function RouteComponent() {
         />
 
         <YsqAnswerCard
+          additionalOnClick={handleOnAnswerClick}
           Icon={CheckIcon}
           value={4}
           qIndex={qIndex}
@@ -100,6 +113,7 @@ function RouteComponent() {
         />
 
         <YsqAnswerCard
+          additionalOnClick={handleOnAnswerClick}
           Icon={CheckCircleIcon}
           value={5}
           qIndex={qIndex}
@@ -108,6 +122,7 @@ function RouteComponent() {
         />
 
         <YsqAnswerCard
+          additionalOnClick={handleOnAnswerClick}
           Icon={TargetIcon}
           value={6}
           qIndex={qIndex}

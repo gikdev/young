@@ -10,15 +10,19 @@ interface YsqAnswerCardProps {
   value: 1 | 2 | 3 | 4 | 5 | 6
   title: string
   Icon: Icon
+  additionalOnClick: () => void
 }
 
-export function YsqAnswerCard({ selectedAnswer, qIndex, value, title, Icon }: YsqAnswerCardProps) {
+export function YsqAnswerCard({ selectedAnswer, qIndex, value, title, Icon, additionalOnClick }: YsqAnswerCardProps) {
   const dispatch = useAppDispatch()
 
   return (
     <button
       className={btn({ variant: selectedAnswer === value ? "primary" : "secondary" })}
-      onClick={() => dispatch(youngSchemaFormSlice.actions.setAnswer({ questionIndex: qIndex, value: value }))}
+      onClick={() => {
+        dispatch(youngSchemaFormSlice.actions.setAnswer({ questionIndex: qIndex, value: value }))
+        additionalOnClick()
+      }}
     >
       <Icon size={24} weight={selectedAnswer === value ? "fill" : "regular"} />
       <span>{title}</span>
