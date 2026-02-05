@@ -1,3 +1,3 @@
-# Maghz Free 🧠
+# Young
 
-**Maghz Free** helps you empty your mind. Dump your thoughts. Get back to your work!
+**Young** helps you do the **Young Schema Questionnaire** test!
