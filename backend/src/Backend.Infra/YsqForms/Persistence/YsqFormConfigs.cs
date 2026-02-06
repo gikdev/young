@@ -9,10 +9,9 @@ public class YsqFormConfigs : EntityBaseConfig<YsqForm> {
         base.Configure(builder);
 
         builder.OwnsMany(x => x.Answers, a => {
-            a.WithOwner().HasForeignKey("YsqFormId");
+            a.HasKey("YsqFormId", "QuestionIndex");
             a.Property(s => s.Response);
             a.Property(s => s.QuestionIndex);
-            a.HasKey("YsqFormId", "QuestionIndex");
         });
     }
 }
