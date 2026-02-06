@@ -75,16 +75,16 @@ namespace Backend.Infra.Migrations
                             b1.Property<Guid>("YsqFormId")
                                 .HasColumnType("uuid");
 
-                            b1.Property<int>("Id")
+                            b1.Property<int>("QuestionIndex")
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("integer");
 
-                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("QuestionIndex"));
 
                             b1.Property<byte>("Response")
                                 .HasColumnType("smallint");
 
-                            b1.HasKey("YsqFormId", "Id");
+                            b1.HasKey("YsqFormId", "QuestionIndex");
 
                             b1.ToTable("YsqFormAnswer");
 

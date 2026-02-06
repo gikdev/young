@@ -16,8 +16,8 @@ public class YsqFormAnswer : ValueObject {
         Response      = response;
     }
 
-    public int         QuestionIndex { get; }
-    public YsqResponse Response      { get; }
+    public int         QuestionIndex { get; private set; }
+    public YsqResponse Response      { get; private set; }
 
     public static ErrorOr<YsqFormAnswer> Create(
         int         questionIndex,

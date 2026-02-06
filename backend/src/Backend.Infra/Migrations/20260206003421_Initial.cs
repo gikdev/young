@@ -37,14 +37,14 @@ namespace Backend.Infra.Migrations
                 name: "YsqFormAnswer",
                 columns: table => new
                 {
-                    YsqFormId = table.Column<Guid>(type: "uuid", nullable: false),
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    QuestionIndex = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    YsqFormId = table.Column<Guid>(type: "uuid", nullable: false),
                     Response = table.Column<byte>(type: "smallint", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_YsqFormAnswer", x => new { x.YsqFormId, x.Id });
+                    table.PrimaryKey("PK_YsqFormAnswer", x => new { x.YsqFormId, x.QuestionIndex });
                     table.ForeignKey(
                         name: "FK_YsqFormAnswer_YsqForms_YsqFormId",
                         column: x => x.YsqFormId,
