@@ -11,7 +11,7 @@ export const Route = createFileRoute("/forms/young-schema/")({
 
 function RouteComponent() {
   return (
-    <Base className="items-center py-4 px-4 text-center gap-4">
+    <Base className="items-center py-4 px-4 text-center gap-4 justify-center">
       <img src="/thinking.jpg" alt="" className="border-2 border-slate-300 rounded-md max-w-64 w-full" />
 
       <h1 className="font-bold text-slate-950 text-2xl">{title}</h1>
