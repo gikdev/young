@@ -81,6 +81,9 @@ namespace Backend.Infra.Migrations
 
                             NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
 
+                            b1.Property<byte>("Response")
+                                .HasColumnType("smallint");
+
                             b1.HasKey("YsqFormId", "Id");
 
                             b1.ToTable("YsqFormAnswer");

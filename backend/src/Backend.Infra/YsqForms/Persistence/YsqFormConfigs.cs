@@ -8,6 +8,8 @@ public class YsqFormConfigs : EntityBaseConfig<YsqForm> {
     public override void Configure(EntityTypeBuilder<YsqForm> builder) {
         base.Configure(builder);
 
-        builder.OwnsMany(x => x.Answers);
+        builder.OwnsMany(x => x.Answers, a => {
+            a.Property(s => s.Response);
+        });
     }
 }

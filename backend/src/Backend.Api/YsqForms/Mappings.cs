@@ -64,9 +64,13 @@ internal static class Mappings {
     }
 
     internal static YsqFormAnswerResponse MapToResponse(this YsqFormAnswer ysqFormAnswer) {
+        if (ysqFormAnswer.Response is null) throw new NullReferenceException("YSQ Form Answer should not be null!");
+
+        var contractResponse = Enum.Parse<ContractYsqResponse>(ysqFormAnswer.Response.Name);
+
         return new YsqFormAnswerResponse {
             QuestionIndex = ysqFormAnswer.QuestionIndex,
-            YsqResponse   = (ContractYsqResponse)ysqFormAnswer.Response.Value
+            YsqResponse   = contractResponse
         };
     }
 

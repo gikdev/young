@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Infra.Migrations
 {
     [DbContext(typeof(BackendDbCtx))]
-    [Migration("20260203132728_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260206000555_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,6 +83,9 @@ namespace Backend.Infra.Migrations
                                 .HasColumnType("integer");
 
                             NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<byte>("Response")
+                                .HasColumnType("smallint");
 
                             b1.HasKey("YsqFormId", "Id");
 
