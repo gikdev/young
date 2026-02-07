@@ -1,6 +1,6 @@
 import { btn } from "#/common/atoms/btn"
 import { Base } from "#/common/layouts/base"
-import { ArrowLeftIcon } from "@phosphor-icons/react"
+import { ArrowLeftIcon, ListIcon } from "@phosphor-icons/react"
 import { createFileRoute, Link } from "@tanstack/react-router"
 
 import { title, introduction, description } from "./content.json"
@@ -23,6 +23,11 @@ function RouteComponent() {
       <Link className={btn({ className: "w-full" })} to="/forms/young-schema/basic-info">
         <span>شروع</span>
         <ArrowLeftIcon />
+      </Link>
+
+      <Link className={btn({ className: "w-full", variant: "secondary" })} to="/admin/entries">
+        <ListIcon />
+        <span>دیدن نتایج</span>
       </Link>
     </Base>
   )

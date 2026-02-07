@@ -1,14 +1,5 @@
-import { Base } from "#/common/layouts/base"
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Navigate } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: () => <Navigate to="/l/fysq" />,
 })
-
-function Index() {
-  return (
-    <Base>
-      <p>- خالی -</p>
-    </Base>
-  )
-}
