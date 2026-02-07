@@ -6,6 +6,7 @@ interface Question {
   index: number
   title: string
   place: QuestionPlace
+  tag?: string
 }
 
 export class YsqQuestionsRepo {
@@ -19,6 +20,7 @@ export class YsqQuestionsRepo {
       index: qIndex,
       title: question.question,
       place: YsqQuestionsRepo.calculateQuestionPlace(qIndex, questions.length),
+      tag: question.tag
     }
   }
 

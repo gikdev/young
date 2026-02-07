@@ -73,10 +73,11 @@ function RouteComponent() {
       {/* === Answers Matrix Table === */}
       <div className="overflow-x-auto mt-6">
         <h2 className="font-bold text-lg mb-2">پاسخ‌ها</h2>
-        <table className="w-full min-w-max border-collapse border border-slate-300">
+        <table className="w-full min-w-min border-collapse border border-slate-300">
           <thead>
             <tr className="bg-slate-100">
               <th className="border border-slate-300 px-4 py-2">#</th>
+              <th className="border border-slate-300 px-4 py-2">تگ</th>
               <th className="border border-slate-300 px-4 py-2">سوال</th>
               {Object.values(Responses).map(resp => (
                 <th key={resp} className="border border-slate-300 px-4 py-2 text-center">
@@ -91,6 +92,7 @@ function RouteComponent() {
               return (
                 <tr key={a.questionIndex} className="hover:bg-slate-50">
                   <td className="border border-slate-300 px-4 py-2 text-center">{a.questionIndex}</td>
+                  <td className="border border-slate-300 px-4 py-2">{question?.tag || "-"}</td>
                   <td className="border border-slate-300 px-4 py-2">{question?.title}</td>
                   {Object.keys(Responses).map(resp => (
                     <td key={resp} className="border border-slate-300 px-4 py-2 text-center">
