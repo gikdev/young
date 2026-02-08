@@ -9,13 +9,13 @@ using Scalar.AspNetCore;
 Env.TraversePath().Load();
 
 var builder = WebApplication.CreateBuilder(args);
-var config  = builder.Configuration;
+var config = builder.Configuration;
 
 var connStr = new NpgsqlConnectionStringBuilder {
-    Host     = config.GetValue<string?>("DB_HOST")     ?? throw new Exception("DB_HOST not set"),
-    Port     = config.GetValue<int?>("DB_PORT")        ?? throw new Exception("DB_PORT not set"),
-    Database = config.GetValue<string?>("DB_NAME")     ?? throw new Exception("DB_NAME not set"),
-    Username = config.GetValue<string?>("DB_USER")     ?? throw new Exception("DB_USER not set"),
+    Host = config.GetValue<string?>("DB_HOST") ?? throw new Exception("DB_HOST not set"),
+    Port = config.GetValue<int?>("DB_PORT") ?? throw new Exception("DB_PORT not set"),
+    Database = config.GetValue<string?>("DB_NAME") ?? throw new Exception("DB_NAME not set"),
+    Username = config.GetValue<string?>("DB_USER") ?? throw new Exception("DB_USER not set"),
     Password = config.GetValue<string?>("DB_PASSWORD") ?? throw new Exception("DB_PASSWORD not set")
 }.ConnectionString;
 
@@ -28,6 +28,13 @@ builder.Services.AddSharedServices();
 builder.Services.AddBackend(connStr);
 
 var app = builder.Build();
+
+app.UseStatusCodePages();
+app.UseExceptionHandler();
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
+app.MapFallbackToFile("index.html");
 
 app.MapOpenApi();
 

@@ -26,6 +26,7 @@
     "axios": "^1.13.4",
     "radashi": "^12.7.1",
     "react": "^19.2.4",
+    "react-date-object": "^2.1.9",
     "react-dom": "^19.2.4",
     "react-redux": "^9.2.0",
     "tailwind-merge": "^3.4.0",
