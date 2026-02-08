@@ -2,11 +2,11 @@ using System.Text.Json.Serialization;
 using Backend.Api;
 using Backend.Shared;
 using Backend.Shared.Api;
-using DotNetEnv;
+// using DotNetEnv;
 using Npgsql;
 using Scalar.AspNetCore;
 
-Env.TraversePath().Load();
+// Env.TraversePath().Load();
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
